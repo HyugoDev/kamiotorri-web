@@ -1,22 +1,22 @@
 'use client'
 
 
-import { Fragment } from 'react'
+
 import { Disclosure } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 
 import Image from 'next/image'
 import Link from 'next/link'
 import MenuProfile from './menu-profile'
-import { Licorice } from 'next/font/google'
 
-// import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 
+
+import Logo from '../../../public/Logo-KamioTorri.png'
 
 
 const navigation = [
-  { name: 'Directorio', href: 'directory', current: false },
+  { name: 'Directorio', href: 'directorio', current: false },
   // { name: 'Tus Números', href: 'numbers', current: false },
   // { name: '', href: '#', current: false },
   // { name: 'Calendar', href: '#', current: false },
@@ -27,8 +27,6 @@ function classNames(...classes) {
 }
 
 export default function Navbar({ session }) {
-
-  console.log(session)
 
   return (
     <Disclosure as="nav" className="">
@@ -50,12 +48,12 @@ export default function Navbar({ session }) {
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <Link href="/">
+                  <Link href="/" className=''>
                     <Image
-                      src='/Logo-KamioTorri.png'
+                      src={Logo}
                       alt='Logo-KamioTorri'
-                      width={80}
-                      height={80}
+                      className='object-cover w-20'
+                      priority
                     />
                   </Link>
                 </div>
@@ -122,7 +120,7 @@ export default function Navbar({ session }) {
               {navigation.map((item) => (
                 <Disclosure.Button
                   key={item.name}
-                  as="Link"
+                  as={Link}
                   href={item.href}
                   className={classNames(
                     item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',

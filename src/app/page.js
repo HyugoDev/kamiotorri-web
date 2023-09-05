@@ -1,35 +1,27 @@
-import Image from 'next/image'
+
+import { Suspense } from 'react'
+import LastEpisodes from './components/anime/lastepisodes'
+import Loading from './loading'
 
 
 
 
+export default async function Home() {
 
-export default function Home() {
+
 
 
   return (
     <>
-      <div className="w-full h-screen  flex justify-center items-center	">
-        <span className="content-center text-7xl">🛠️En Contrución🛠️</span>
+      <Suspense fallback={<Loading />}>
+        <LastEpisodes />
+      </Suspense>
 
-        {/* {user ? (
-          <div className="flex items-center gap-4">
-            Hey, {user.email}!
-            <form action="/auth/sign-out" method="post">
-              <button className="py-2 px-4 rounded-md no-underline bg-btn-background hover:bg-btn-background-hover">
-                Logout
-              </button>
-            </form>
-          </div>
-        ) : (
-          <Link
-            href="/login"
-            className="py-2 px-4 rounded-md no-underline bg-btn-background hover:bg-btn-background-hover"
-          >
-            Login
-          </Link>
-        )} */}
-      </div>
+
+
+      {/* <div className="w-full h-screen  flex justify-center items-center	">
+        <span className="content-center text-7xl">🛠️En Contrución🛠️</span>
+      </div> */}
     </>
   )
 }
