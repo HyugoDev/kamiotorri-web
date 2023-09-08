@@ -19,3 +19,13 @@ body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb))
 }
+
+body::-webkit-scrollbar {
+  background-color: transparent;
+}
+
+.transparentScrollbar::-webkit-scrollbar {
+  background-color: transparent;
+  width: 0;
+  height: 0;
+}

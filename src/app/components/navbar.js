@@ -16,7 +16,7 @@ import Logo from '../../../public/Logo-KamioTorri.png'
 
 
 const navigation = [
-  { name: 'Directorio', href: 'directorio', current: false },
+  { name: 'Directorio', href: '/directorio', current: false },
   // { name: 'Tus Números', href: 'numbers', current: false },
   // { name: '', href: '#', current: false },
   // { name: 'Calendar', href: '#', current: false },
